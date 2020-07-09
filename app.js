@@ -137,7 +137,7 @@ function buildCards(
 ) {
   let card = document.createElement("div");
   card.innerHTML = `<div class='card__left'> \
-    <img src=${image} class='card__image' /> 
+    <img src=${image} alt"logo" class='card__image' /> 
   </div> 
 
   <div class='card__middle'> 
