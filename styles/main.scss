@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+$LightGrayishCyan: hsl(180, 52%, 96%);
+$LightGrayishCyan: hsl(180, 31%, 95%);
+$DarkGrayishCyan: hsl(180, 8%, 52%);
+$VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+$DesaturatedDarkCyan: hsl(180, 29%, 50%);
+
+body {
+  font-family: "Spartan", sans-serif;
+  background-color: $LightGrayishCyan;
+  overflow-x: hidden;
+}
+
+.header {
+  width: 100vw;
+  height: 20vh;
+  background-color: $DesaturatedDarkCyan;
+  background-image: url("../images/bg-header-desktop.svg");
+  background-size: cover;
+  margin-bottom: 15rem;
+}
+
+.searchbar {
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+  transform: translateY(15vh);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(black, 0.1);
+  align-items: center;
+
+  display: flex;
+
+  @media only screen and (max-width: 900px) {
+    width: 90%;
+  }
+
+  &__tags {
+    display: flex;
+    margin-right: auto;
+  }
+
+  &__clear {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $DesaturatedDarkCyan;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $DesaturatedDarkCyan;
+    }
+  }
+
+  &__tag {
+    display: flex;
+    margin-right: 2rem;
+
+    &-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $DesaturatedDarkCyan;
+      padding: 0.7rem;
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      background-color: rgba($DesaturatedDarkCyan, 0.1);
+    }
+
+    &-icon {
+      background-color: $DesaturatedDarkCyan;
+      padding: 0.7rem;
+      border-top-right-radius: 0.3rem;
+      border-bottom-right-radius: 0.3rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $VeryDarkGrayishCyan;
+      }
+
+      & img {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.borderLeft {
+  border-left: 0.7rem solid $DesaturatedDarkCyan;
+}
+
+.card:last-of-type {
+  margin-bottom: 20rem;
+}
+
+.cards {
+  width: 80%;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 900px) {
+    width: 90%;
+  }
+}
+
+.card {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem;
+  box-shadow: 0 0.5rem 1rem rgba(black, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 4rem;
+
+  &__left {
+    margin-right: 3rem;
+
+    @media only screen and (max-width: 900px) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: auto;
+
+    @media only screen and (max-width: 900px) {
+      margin-right: 0;
+    }
+
+    &-top {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: 900px) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      margin-top: 0.5rem;
+
+      @media only screen and (max-width: 900px) {
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba($DarkGrayishCyan, 0.4);
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__company {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $DesaturatedDarkCyan;
+    margin-right: 1rem;
+  }
+
+  &__new {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: white;
+    background-color: $DesaturatedDarkCyan;
+    padding: 0.5rem;
+    border-radius: 5rem;
+    margin-right: 1rem;
+  }
+
+  &__featured {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: white;
+    background-color: $VeryDarkGrayishCyan;
+    padding: 0.5rem;
+    border-radius: 5rem;
+    margin-right: 1rem;
+  }
+
+  &__title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: $VeryDarkGrayishCyan;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $DesaturatedDarkCyan;
+    }
+  }
+
+  &__time,
+  &__type,
+  &__region {
+    font-size: 1.1rem;
+    color: $DarkGrayishCyan;
+    margin-right: 1.5rem;
+  }
+
+  &__tag {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $DesaturatedDarkCyan;
+    background-color: rgba($DesaturatedDarkCyan, 0.1);
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:not(:last-of-type) {
+      margin-right: 1.5rem;
+    }
+
+    &:hover {
+      color: $LightGrayishCyan;
+      background-color: $DesaturatedDarkCyan;
+    }
+
+    @media only screen and (max-width: 900px) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+}
