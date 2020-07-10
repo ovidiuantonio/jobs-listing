@@ -137,7 +137,7 @@ function buildCards(
 ) {
   let card = document.createElement("div");
   card.innerHTML = `<div class='card__left'> \
-    <img src=${image} alt='logo' class='card__image' /> 
+    <img src=${image} class='card__image' /> 
   </div> 
 
   <div class='card__middle'> 
@@ -221,12 +221,14 @@ const cardTags = document.querySelectorAll(".card__tag");
 const searchbarTags = document.querySelector(".searchbar__tags");
 const allCards = document.querySelectorAll(".card");
 const clearButton = document.querySelector(".searchbar__clear");
+const searchbar = document.querySelector(".searchbar");
 
 cardTags.forEach((tag) => {
   tag.addEventListener("click", filter);
 });
 
 function filter(e) {
+  searchbar.style.display = "flex";
   tagsF.push(e.target.innerText + "\n  \n    \n  ");
   tags.push(e.target.innerText);
 
@@ -256,6 +258,7 @@ clearButton.addEventListener("click", () => {
   });
 
   searchbarTags.innerHTML = "";
+  searchbar.style.display = "none";
 });
 
 window.addEventListener("click", removeFilter);
@@ -270,6 +273,17 @@ function removeFilter(e) {
 
     tagsF[tagIndex] = "";
     tags[tagIndex] = "";
+
+    let nrTags = 0;
+    tags.forEach((tag) => {
+      if (tag != "") {
+        nrTags++;
+      }
+    });
+
+    if (nrTags == 0) {
+      searchbar.style.display = "none";
+    }
 
     allCards.forEach((card) => {
       card.style.display = "flex";

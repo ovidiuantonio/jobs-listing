@@ -17,7 +17,7 @@ body {
 
 .header {
   width: 100vw;
-  height: 20vh;
+  height: 20rem;
   background-color: #5ba4a4;
   background-image: url("../images/bg-header-desktop.svg");
   background-size: cover;
@@ -29,17 +29,15 @@ body {
   width: 80%;
   margin: 0 auto;
   padding: 3rem;
-  -webkit-transform: translateY(15vh);
-          transform: translateY(15vh);
+  -webkit-transform: translateY(15rem);
+          transform: translateY(15rem);
   border-radius: 0.5rem;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
 }
 
 @media only screen and (max-width: 900px) {
@@ -132,7 +130,6 @@ body {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,6 +140,12 @@ body {
   margin-bottom: 4rem;
 }
 
+@media only screen and (max-width: 900px) {
+  .card {
+    margin-bottom: 7rem;
+  }
+}
+
 .card__left {
   margin-right: 3rem;
 }
@@ -150,6 +153,7 @@ body {
 @media only screen and (max-width: 900px) {
   .card__left {
     margin-bottom: 3rem;
+    margin-top: -7rem;
   }
 }
 

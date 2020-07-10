@@ -22,7 +22,7 @@ body {
 
 .header {
   width: 100vw;
-  height: 20vh;
+  height: 20rem;
   background-color: $DesaturatedDarkCyan;
   background-image: url("../images/bg-header-desktop.svg");
   background-size: cover;
@@ -34,12 +34,12 @@ body {
   width: 80%;
   margin: 0 auto;
   padding: 3rem;
-  transform: translateY(15vh);
+  transform: translateY(15rem);
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(black, 0.1);
   align-items: center;
 
-  display: flex;
+  display: none;
 
   @media only screen and (max-width: 900px) {
     width: 90%;
@@ -120,7 +120,11 @@ body {
   padding: 3rem;
   box-shadow: 0 0.5rem 1rem rgba(black, 0.1);
   border-radius: 0.5rem;
-  overflow: hidden;
+
+  @media only screen and (max-width: 900px) {
+    margin-bottom: 7rem;
+  }
+
   display: flex;
   flex-direction: row;
   margin-bottom: 4rem;
@@ -130,6 +134,7 @@ body {
 
     @media only screen and (max-width: 900px) {
       margin-bottom: 3rem;
+      margin-top: -7rem;
     }
   }
 
